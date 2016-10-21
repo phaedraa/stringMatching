@@ -2,7 +2,7 @@ var matchability = require("../matchability.js");
 
 describe("Matchability function", function() {
 	var data = [
-   	{ input: ['abc', 'abc'], output: [3, 0] },
+   	getTestData(['abc', 'abc'], [3, 0]),
     getTestData(["abc", "abc"], [3, 0]),
     getTestData(["bca", "abc"], [0, 3]),
     getTestData(["aab", "abb"], [2, 0]),
