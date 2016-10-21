@@ -45,3 +45,5 @@ function matchability(stringOne, stringTwo) {
     }
   }
 }
+
+module.exports = matchability;
