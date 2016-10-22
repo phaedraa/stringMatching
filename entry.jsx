@@ -1,16 +1,17 @@
+import AppBar from 'material-ui/AppBar';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import matchability from './matchability';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import TextField from 'material-ui/TextField';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-import matchability from './matchability';
-import AppBar from 'material-ui/AppBar';
 import Subheader from 'material-ui/Subheader';
+import TextField from 'material-ui/TextField';
 
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
+
 class Form extends React.Component {
   constructor(props) {
     super(props);
