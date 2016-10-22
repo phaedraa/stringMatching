@@ -7,6 +7,6 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-app.listen(3000, function () {
-  console.log('Matchability app listening on port 3000!');
+app.listen(app.get('port') || 3000, function() {
+  console.log('Matchability app listening on port ' + app.get('port'));
 });
