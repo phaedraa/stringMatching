@@ -13,6 +13,8 @@ describe("Matchability function", function() {
     getTestData(["", ""], [0, 0]),
     getTestData(["", "aaa"], [0, 0]),
     getTestData(["aaa", ""], [0, 0]),
+    getTestData(["Abc", "Abc"], [3, 0]),
+    getTestData(["AbCdef", "acBED"], [1, 4]),
   ];
   
   for (var k = 0; k < data.length; k++) {

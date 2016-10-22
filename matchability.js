@@ -1,4 +1,6 @@
 function matchability(stringOne, stringTwo) {
+  stringOne = stringOne.toLowerCase();
+  stringTwo = stringTwo.toLowerCase();
   var orderedStr = getMaxAndMinStrings();
   var matchWithIndex = 0;
   var matchNoIndex = 0;
