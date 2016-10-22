@@ -5,8 +5,12 @@
   "main": "bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "postinstall": "webpack"
+    "start": "PORT=3000 node server.js",
+    "postinstall": "NODE_ENV=production webpack"
+  },
+  "engines": {
+    "node": "4.4.7",
+    "npm": "3.10.7"
   },
   "repository": {
     "type": "git",
