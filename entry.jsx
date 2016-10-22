@@ -14,7 +14,7 @@ injectTapEventPlugin();
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { stringOne: "", stringTwo: "" };
+    this.state = { stringOne: "", stringTwo: "", result: []};
     this.handleChangeStringOne = this.handleChangeStringOne.bind(this);
     this.handleChangeStringTwo = this.handleChangeStringTwo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,7 +29,17 @@ class Form extends React.Component {
   }
 
   handleSubmit(event) {
-    alert("Calculating the matchability...");
+    const result = matchability(this.state.stringOne, this.state.stringTwo);
+    this.setState({result: result});
+  }
+
+  renderResult() {
+    const { result } = this.state;
+
+    if (result.length !== 2) {
+      return <span>Results: Not yet calculated.</span>;
+    }
+    return <span>Results: N1: {result[0]} N2: {result[1]}</span>;
   }
 
   render() {
@@ -38,33 +48,49 @@ class Form extends React.Component {
       display: "flex",
       justifyContent: "space-between",
     };
+    const containerStyle = {
+      fontFamily: "Roboto, sans-serif",
+      color: "darkgray",
+    };
+    const centeredContentStyle = {
+      display: "flex",
+      justifyContent: "center",
+    };
+
     return (
       <MuiThemeProvider>
-    		<div>
+    		<div style={containerStyle}>
           <AppBar
             title="String Matchability Calculator"
             showMenuIconButton={false}
+            titleStyle={centeredContentStyle}
           />
           <Subheader>
             This program takes two strings as inputs and outputs two numbers, N1
              and N2. The output describes a degree of matching between the two
-             strings: N1 represents the number of letters in one string that
-             each match in value and in position to a letter in the other
-             string. N2 represents the number of letters in one string that each
-             match in value, but not in position to a letter in the other
-             string.
+             strings:
+            <ul>
+              <li>
+                N1 represents the number of letters in one string that
+                each match in value and in position to a letter in the other
+                string.
+              </li>
+              <li>
+                N2 represents the number of letters in one string that each
+                match in value, but not in position to a letter in the other
+                string.
+              </li>
+            </ul>
           </Subheader>
           <div style={buttonContainerStyle}>
   					<TextField
   						name="string-one"
   						placeholder="String one"
-  						errorText="String one is required"
   						value={this.state.value}
   						onChange={this.handleChangeStringOne} />
   	        <TextField
   						name="string-two"
   						placeholder="String two"
-  						errorText="String two is required"
   						value={this.state.value}
   						onChange={this.handleChangeStringTwo} />
             <RaisedButton
@@ -74,6 +100,9 @@ class Form extends React.Component {
   	          onClick={this.handleSubmit}
               style={{boxShadow: ''}}
             />
+          </div>
+          <div style={centeredContentStyle}>
+            {this.renderResult()}
           </div>
 	      </div>
 	    </MuiThemeProvider>
