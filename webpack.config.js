@@ -4,6 +4,9 @@ module.exports = {
     path: "./public",
     filename: "bundle.js"
   },
+  {
+    "plugins": ["transform-react-jsx"]
+  },
   module: {
     loaders: [
       { test: /\.css$/, loader: "style!css" },
