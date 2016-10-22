@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "postinstall": "NODE_ENV=production webpack -p"
+    "postinstall": "NODE_ENV=production webpack"
   },
   "engines": {
     "node": "6.2.0",
-    "npm": "3.10.7"
+    "npm": "3.9.2"
   },
   "repository": {
     "type": "git",
