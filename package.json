@@ -1,0 +1,33 @@
+{
+  "name": "stringmatching",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phaedraa/stringMatching.git"
+  },
+  "keywords": [
+    "stringmatching"
+  ],
+  "author": "phaedra randolph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phaedraa/stringMatching/issues"
+  },
+  "homepage": "https://github.com/phaedraa/stringMatching#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.16.0",
+    "formsy-material-ui": "^0.5.2",
+    "material-ui": "^0.16.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5"
+  }
+}
