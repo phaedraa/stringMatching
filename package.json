@@ -21,10 +21,13 @@
   "homepage": "https://github.com/phaedraa/stringMatching#readme",
   "dependencies": {
     "babel-preset-react": "^6.16.0",
-    "formsy-material-ui": "^0.5.2",
-    "material-ui": "^0.16.1",
+    "formsy-react": "^0.18.1",
+    "http-server": "^0.9.0",
+    "material-ui": "0.15.1",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "react-tap-event-plugin": "^1.0.0",
+    "webpack": "^1.13.2"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",
